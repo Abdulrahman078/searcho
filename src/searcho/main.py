@@ -7,12 +7,6 @@ from datetime import datetime
 from searcho.crew import Searcho
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
-
-# This main file is intended to be a way for you to run your
-# crew locally, so refrain from adding unnecessary logic into this file.
-# Replace with inputs you want to test with, it will automatically
-# interpolate any tasks and agents information
-
 def run():
     """
     Run the crew.
@@ -33,7 +27,7 @@ def train():
     Train the crew for a given number of iterations.
     """
     inputs = {
-        "topic": "AI LLMs",
+        "topic": "Time Series Forecasting",
         'current_year': str(datetime.now().year)
     }
     try:
@@ -57,7 +51,7 @@ def test():
     Test the crew execution and returns the results.
     """
     inputs = {
-        "topic": "AI LLMs",
+        "topic": "Time Series Forecasting",
         "current_year": str(datetime.now().year)
     }
     

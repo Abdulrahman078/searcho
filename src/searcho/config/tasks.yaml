@@ -1,17 +1,39 @@
 research_task:
   description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given
-    the current year is {current_year}.
+    Use the Serper search tool to research {topic} and find exactly 3 items only.
+    The 3 items must be the newest and trending AI updates in {current_year}.
+    Include both AI news and AI papers when possible.
+    Prioritize trusted sources (official company blogs, recognized tech media,
+    arXiv, conference pages, or reputable labs).
+    For each item, capture:
+    - title
+    - type (news or paper)
+    - publish date
+    - source
+    - url
+    - why it is trending (1 sentence)
+    Do not return more than 3 items.
   expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
+    A markdown list with exactly 3 bullet points, each containing title, type,
+    publish date, source, url, and a one-line trending reason.
   agent: researcher
 
 reporting_task:
   description: >
-    Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
+    Convert the research context into a concise markdown report for {topic}.
+    The report must include:
+    1) A title
+    2) A short "Scope" section
+    3) A section named "Top 3 New & Trending AI Updates"
+    4) Exactly 3 numbered entries, each with:
+       - title
+       - type
+       - publish date
+       - source with url
+       - 2-3 sentence summary
+       - why it matters
+    5) A short "Takeaways" section with 3 bullets
+    Keep the report focused and do not add extra items beyond the top 3.
   expected_output: >
-    A fully fledged report with the main topics, each with a full section of information.
-    Formatted as markdown without '```'
+    A clean markdown report without code fences, containing exactly 3 curated updates.
   agent: reporting_analyst
